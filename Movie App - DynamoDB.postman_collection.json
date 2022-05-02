@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "7704fb3b-2f03-4042-85b6-cea1e63d1a55",
+		"name": "Movie App - DynamoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8081/movie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/movie",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/movie/6c212570-a63e-47fd-8d69-9cbd851986d8",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/movie/d22a1a13-e6b7-4f52-9bde-0f98fd8696b6",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"movie",
+						"d22a1a13-e6b7-4f52-9bde-0f98fd8696b6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/movie/6c212570-a63e-47fd-8d69-9cbd851986d8",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/movie/d22a1a13-e6b7-4f52-9bde-0f98fd8696b6",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"movie",
+						"d22a1a13-e6b7-4f52-9bde-0f98fd8696b6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/movie/6c212570-a63e-47fd-8d69-9cbd851986d8 Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"d22a1a13-e6b7-4f52-9bde-0f98fd8696b6\",\n    \"title\": \"title11\",\n    \"year\": \"year11\",\n    \"genre\": \"genre11\",\n    \"duration\": \"duration11\",\n    \"country\": \"country11\",\n    \"language\": \"language11\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/movie/d22a1a13-e6b7-4f52-9bde-0f98fd8696b6",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"movie",
+						"d22a1a13-e6b7-4f52-9bde-0f98fd8696b6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"title2\",\n    \"year\":\"year2\",\n    \"genre\":\"genre2\",\n    \"duration\":\"duration2\",\n    \"country\":\"country2\",\n    \"language\":\"language2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/movie",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
