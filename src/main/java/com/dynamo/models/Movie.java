@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 
 @Data
 @AllArgsConstructor
@@ -22,22 +24,52 @@ public class Movie {
 	@DynamoDBAttribute
 	private String title;
 	@DynamoDBAttribute
-	private String year;
+	private String director;
+	@DynamoDBAttribute
+	private String publishYear;
 	@DynamoDBAttribute
 	private String genre;
 	@DynamoDBAttribute
 	private String duration;
 	@DynamoDBAttribute
 	private String country;
+
+	@DynamoDBAttribute
+	private String reviews;
+
+
+
 	@DynamoDBAttribute
 	private String language;
+	@DynamoDBAttribute
+	private String budget;
 
-	public Movie(String title, String year, String genre, String duration, String country, String language) {
+	public Movie(String genre) {
+		this.genre = genre;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Movie)) return false;
+		Movie movie = (Movie) o;
+		return getId().equals(movie.getId()) && getTitle().equals(movie.getTitle()) && getDirector().equals(movie.getDirector()) && getPublishYear().equals(movie.getPublishYear()) && getGenre().equals(movie.getGenre()) && getDuration().equals(movie.getDuration()) && getCountry().equals(movie.getCountry()) && getReviews().equals(movie.getReviews()) && getLanguage().equals(movie.getLanguage()) && getBudget().equals(movie.getBudget());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(getId(), getTitle(), getDirector(), getPublishYear(), getGenre(), getDuration(), getCountry(), getReviews(), getLanguage(), getBudget());
+	}
+
+	public Movie(String title, String publishYear, String genre, String duration, String country, String budget, String reviews, String language) {
 		this.title=title;
-		this.year=year;
+		this.publishYear = publishYear;
 		this.genre=genre;
 		this.duration = duration;
 		this.country = country;
+		this.budget = budget;
+		this.reviews = reviews;
 		this.language = language;
 	}
+
 }

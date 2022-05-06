@@ -1,22 +1,20 @@
 package com.dynamo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-import com.dynamo.models.Movie;
-import com.dynamo.repositories.MovieRepository;
+import com.dynamo.repositories.RepositoryMovie;
 
 @SpringBootApplication
-public class CoreApplication{
+public class ApplicationService {
 
 	@Autowired
-    private MovieRepository movieRepository;
+    private RepositoryMovie repositoryMovie;
 
 	public static void main(String[] args) {
-		SpringApplication.run(CoreApplication.class, args);
+		SpringApplication.run(ApplicationService.class, args);
 	}
 
 }
